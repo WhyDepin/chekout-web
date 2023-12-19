@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Whydepin - Api</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="https://image.ibb.co/fOur3b/favicon.png"/>
+<!-- css -->
+<meta name="theme-color" content="#3a9fff"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+
+</head>
+<body>
+<header class="header">
+  <div class="container header__container">
+<div class="header__logo"> <i class="fa fa-globe"></i><h1 class="header__title">Whydepin<span class="head-blue">Api's</span></h1></div> 
+     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+  
+  <div class="header__menu">
+    <nav id="navbar" class="header__nav collapse">
+      <ul class="header__elenco">
+        <li class="header__el"><a href="#" class="header__link">Home</a></li>
+        <li class="header__el"><a href="/account" class="header__link">Account</a></li>
+        <li class="header__el"><a href="/price" class="header__link">Pricing</a></li>
+        <li class="header__el header__el--blue"><a href="/users/logout" class="btn btn--white">Log Out →</a></li>
+      </ul>
+    </nav>
+  </div>
+    </div>
+</header>
+
+<div class="sect sect--padding-bottom">
+<div class="container">
+<div class="row row--center">
+<div class="row row--center row--margin">
+  <div class="col-md-4 col-sm-4 price-box price-box--purple">
+    <div class="price-box__wrap">
+      <i class="fa fa-cubes fa-5x" style="color: #9200FF"></i>
+      <h1 class="price-box__title">
+        Trial
+      </h1>
+      <h2 class="price-box__discount">
+        <span class="price-box__dollar">Rp</span>7k<span class="price-box__discount--light">/weeks</span>
+      </h2>
+      <p class="price-box__feat">
+        Features
+      </p>
+      <ul class="price-box__list">
+        <li>Custom Key <i class="fa fa-times head-red"></i></li>
+        <li>Limit <span class="head-green">999</span></li>
+        <li>Expired <span class="head-green">7 Day</span></li>
+      </ul>
+       <div class="price-box__btn">
+      <a class="btn btn--purple btn--width" href="https://wa.me/6288976366036">Buy now</a>
+    </div>
+  </div>
+  </div>
+  <!-- second -->
+  <div class="col-md-4 col-sm-4 price-box price-box--violet">
+  <div class="price-box__wrap">
+      <i class="fa fa-cubes fa-5x" style="color: #1900FF"></i>
+      <h1 class="price-box__title">
+        Vip
+      </h1>
+      <h2 class="price-box__discount">
+      <span class="price-box__dollar">Rp</span>15k<span class="price-box__discount--light">/month</span>
+      </h2>
+      <p class="price-box__feat">
+        Features
+      </p>
+      <ul class="price-box__list">
+        <li>Custom Key <i class="fa fa-check head-green"></i></li>
+        <li>Limit <span class="head-green">Unlimited</span></li>
+        <li>Expired <span class="head-green">1 month</span></li>
+      </ul>
+      <div class="price-box__btn">
+      <a class="btn btn--violet btn--width" href="https://wa.me/6288976366036">Buy now</a>
+    </div>
+  </div>
+  </div>
+
+
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+	
+	<footer>
+                <div class="text-center">
+                    Made with <i class="fa fa-heart head-red"></i> by
+                    <a href="https://github.com/nullzxdev" class="text-dark" target="_blank" rel="nofollow">FXdeveloper</a>
+                    </span>
+                </div>
+            </footer>
+		
+    </div>
+
+<!-- Javascript -->
+<script>
+      function inspect() {
+        var script = document.createElement('script')
+        script.src = "//cdn.jsdelivr.net/npm/eruda"
+        document.body.appendChild(script)
+        script.onload = function() {
+          eruda.init()
+        }
+      }
+      if (location.href.includes('inspect=')) {
+        inspect()
+      }
+
+      function kyun(seconds) {
+        function pad(s) {
+          return (s < 10 ? '0' : '') + s;
+        }
+        var hours = Math.floor(seconds / (60 * 60));
+        var minutes = Math.floor(seconds % (60 * 60) / 60);
+        var seconds = Math.floor(seconds % 60);
+
+        //return pad(hours) + ':' + pad(minutes) + ':' + pad(seconds)
+        return `${pad(hours)} Jam ${pad(minutes)} Menit ${pad(seconds)} Detik`
+      }
+
+      function inputnama() {
+        swal.mixin({
+          input: 'text',
+          confirmButtonText: 'Next &rarr;',
+          showCancelButton: true,
+          progressSteps: ['1']
+        }).queue([{
+          text: 'Silahkan masukkan nama anda'
+        }]).then((result) => {
+          if (result.value) {
+            setCookie('nama', result.value[0], 365)
+            document.getElementById('namamu').innerText = getCookie('nama')
+            console.log(result.value[0])
+          }
+        })
+      }
+
+      window.setTimeout("waktu()", 1000);
+
+      function waktu() {
+        var waktu = new Date();
+        setTimeout("waktu()", 1000);
+        let strings = `${waktu.getHours()}:${waktu.getMinutes()}:${waktu.getSeconds()}`
+        document.getElementById("jam").textContent = ' ' + strings
+      }
+
+      window.setTimeout("writeiphtml()", 1000);
+
+      function writeiphtml() {
+        setTimeout("writeiphtml()", 1000);
+        document.getElementById("ipanda").innerText = ipanda
+      }
+      getip()
+
+      function getip() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", 'https://api.ipify.org/?format=json');
+        xhr.responseType = "json";
+        xhr.onload = function() {
+          ipanda = this.response.ip
+          console.log(this.response.ip)
+        };
+        xhr.send();
+      }
+
+      window.setTimeout("getvisit()", 1000);
+
+      function getvisit() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", `https://api.countapi.xyz/hit/${location.host}/visits`);
+        xhr.responseType = "json";
+        xhr.onload = function() {
+          document.getElementById('visits').innerText = this.response.value
+          document.getElementById('visitskecil').innerText = location.host + ' telah dikunjungi sebanyak ' + this.response.value + ' kali'
+        }
+        xhr.send();
+      }
+
+      function getOS() {
+        var userAgent = window.navigator.userAgent,
+          platform = window.navigator.platform,
+          macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+          windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+          iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+          os = null;
+        if (macosPlatforms.indexOf(platform) !== -1) {
+          os = 'Mac OS';
+        } else if (iosPlatforms.indexOf(platform) !== -1) {
+          os = 'iOS';
+        } else if (windowsPlatforms.indexOf(platform) !== -1) {
+          os = 'Windows';
+        } else if (/Android/.test(userAgent)) {
+          os = 'Android';
+        } else if (!os && /Linux/.test(platform)) {
+          os = 'Linux';
+        }
+
+        return os;
+      }
+
+
+      var p = new Ping();
+      p.ping("https://www.google.com", function(err, data) {
+        if (err) {
+          console.log("error loading resource")
+          data = data + " " + err;
+        }
+        console.log(data + ' ms')
+      });
+
+      function warnaprogress(id, warna, persen) {
+        if (persen <= 5) {
+          warna = 'danger'
+        }
+        if (persen >= 6) {
+          warna = 'warning'
+        }
+        if (persen >= 16) {
+          warna = 'success'
+        }
+        document.getElementById(id).className = 'progress-bar bg-' + warna
+        console.log(document.getElementById(id).className)
+      }
+    </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
